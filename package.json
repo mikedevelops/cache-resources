@@ -1,0 +1,19 @@
+{
+  "name": "cache-resources",
+  "version": "1.0.0",
+  "description": "Cache resources with javascript",
+  "main": "cacheResources.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mikedevelops/cache-resources.git"
+  },
+  "author": "Mike Smart",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/mikedevelops/cache-resources/issues"
+  },
+  "homepage": "https://github.com/mikedevelops/cache-resources#readme"
+}
