@@ -25,6 +25,9 @@ export function Request (url, method = 'GET') {
  */
 Request.prototype.handleResponse = function (resolve, reject, event) {
     const { target } = event
-    if (target.status === 200) return resolve(JSON.parse(target.response))
+
+    // catch status 0 here, when the app is run natively in a webview in iOS
+    // the XHR request will respond correctlt but will not assign a 200 status
+    if (target.status === 200 || target.status === 0 && target.response) return resolve(JSON.parse(target.response))
     else return reject(target)
 }

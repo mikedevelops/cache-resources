@@ -2,13 +2,15 @@ import { Request } from './helpers/Request'
 
 const CacheResources = function (options) {
     // Plugin default options
-    const defaults = { test: /\.jpg$/, filename: 'assets.json' }
+    const defaults = { test: /\.jpg$/, filename: 'assets.json', verbose: false }
     // merge instantiation options with defaults
     this.config = Object.assign({}, defaults, options)
     // Get assets
     const assets = new Request(this.config.filename)
     .then(res => this.handleAssets.call(this, res))
-    .catch(err => { throw new Error(err) })
+    .catch(err => { 
+        throw new Error(err) 
+    })
 }
 
 /**
