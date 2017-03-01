@@ -3,15 +3,19 @@ const HtmlWebpackPlugin = require('html-webpack-plugin')
 const FileCatalogue = require('file-catalogue/FileCatalogue')
 
 module.exports = {
-    entry: path.resolve(__dirname, 'src/example.js'),
+    entry: { 
+        example: path.resolve(__dirname, 'src/example'),
+        cacheResources: path.resolve(__dirname, 'src/CacheResources')
+    },
     output: {
-        filename: 'cacheResources.bundle.js',
-        path: path.resolve(__dirname, 'dist')
+        filename: '[name].bundle.js',
+        path: path.resolve(__dirname, 'lib')
     },
     module: {
         rules: [
             {
                 test: /\.js$/,
+                exclude: [/node_modules/],
                 use: [
                     {
                         loader: 'babel-loader',

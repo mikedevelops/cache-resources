@@ -1,4 +1,4 @@
-import CacheResources from './cacheResources'
+import CacheResources from './CacheResources'
 
 import dogJpeg from '../assets/images/dog.jpg'
 import dogPng from '../assets/images/dog.png'
