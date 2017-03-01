@@ -9,7 +9,10 @@ module.exports = {
     },
     output: {
         filename: '[name].bundle.js',
-        path: path.resolve(__dirname, 'lib')
+        path: path.resolve(__dirname, 'lib'),
+        library: 'CacheResources',
+        libraryTarget: 'umd',
+        umdNamedDefine: true
     },
     module: {
         rules: [
@@ -38,7 +41,7 @@ module.exports = {
     plugins: [
         new HtmlWebpackPlugin({
             title: 'Cache Resources',
-            filename: path.resolve(__dirname, 'dist/index.html'),
+            filename: path.resolve(__dirname, 'lib/index.html'),
             template: path.resolve(__dirname, 'src/template/index.ejs')
         }),
         new FileCatalogue()

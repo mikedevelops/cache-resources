@@ -1,6 +1,6 @@
 import { Request } from './helpers/Request'
 
-export default function CacheResources (options) {
+const CacheResources = function (options) {
     // Plugin default options
     const defaults = { test: /\.jpg$/, filename: 'assets.json' }
     // merge instantiation options with defaults
@@ -51,3 +51,5 @@ CacheResources.prototype.cacheAssets = function (assets) {
 
     typeof this.config.complete === 'function' && this.config.complete.call(this, assets)
 }
+
+module.exports = CacheResources
