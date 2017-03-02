@@ -28,6 +28,6 @@ Request.prototype.handleResponse = function (resolve, reject, event) {
 
     // catch status 0 here, when the app is run natively in a webview in iOS
     // the XHR request will respond correctlt but will not assign a 200 status
-    if (target.status === 200 || target.status === 0 && target.response) return resolve(JSON.parse(target.response))
+    if (target.status === 200 || target.status === 0 && target.response) return resolve(target.response)
     else return reject(target)
 }
