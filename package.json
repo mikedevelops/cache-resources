@@ -1,6 +1,6 @@
 {
   "name": "cache-resources",
-  "version": "1.1.0",
+  "version": "1.2.0",
   "description": "Cache resources with javascript",
   "main": "./lib/cacheResources.bundle.js",
   "scripts": {
