@@ -31,7 +31,7 @@ The JSON file to be requested for asset parsing, you will need to manually creat
 
 ----
 
-`test: [RegExp] (default: /\.jpg$/)`
+`test: [RegExp] (default: /\.(jpg|jpeg|png|svg|gif|mp4)$/)`
 
 A regular expression to execute against each file to determine if it should be cached or skipped.
 

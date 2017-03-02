@@ -22,10 +22,7 @@ const CacheResources = function (options) {
     // Get assets
     const assets = new Request(this.config.filename)
     .then(res => this.handleAssets.call(this, JSON.parse(res)))
-    .catch(err => { 
-        console.log(err)
-        // throw new Error(err) 
-    })
+    .catch(err => { throw new Error(err) })
 }
 
 /**
