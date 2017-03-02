@@ -8,7 +8,7 @@ import videoMp4 from '../assets/videos/video.mp4'
 const output = document.getElementById('output')
 
 const cacheAssets = new CacheResources({
-    test: /\.(jpg|png|svg|jpeg|mp4)$/,
+    // test: /\.(jpg|png|svg|jpeg|mp4)$/,
     complete: function (assets) {
         output.innerHTML = printAssets(assets)
     }

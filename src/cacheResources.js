@@ -2,7 +2,10 @@ import { Request } from './helpers/Request'
 
 const CacheResources = function (options) {
     // Plugin default options
-    const defaults = { test: /\.jpg$/, filename: 'assets.json', verbose: false }
+    const defaults = { 
+        test: /\.(jpg|jpeg|png|svg|gif|mp4)$/, 
+        filename: 'assets.json', verbose: false 
+    }
     // merge instantiation options with defaults
     this.config = Object.assign({}, defaults, options)
     // define media types
@@ -42,6 +45,7 @@ CacheResources.prototype.handleAssets = function (response) {
 CacheResources.prototype.buildAssets = function (response) {
     return response.assets.reduce((assets, asset) => {
         const re = this.filterAsset(asset)
+
         if (re) assets.push({ file: re.input, method: this.getMediaType(re[1]) })
         return assets
     }, [])
